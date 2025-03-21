@@ -1,0 +1,265 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden; /* Evita el scroll horizontal en la página */
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #ffffff;
+    font-size: 9pt;
+}
+
+header {
+    color: #ffffff;
+    text-align: center;
+    height: 10vh;
+    align-items: center;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    background-color: #ffffff;
+    color: #000;
+    top: 0;
+    padding: 10px 0 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between; /* Distribuye los grupos */
+    align-items: center;
+    list-style-type: none;
+    padding: 0 25px;
+}
+
+/* Agrupación de elementos dentro del nav */
+.nav-group {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Espacio de 10px entre elementos dentro de cada grupo */
+}
+
+.nav-group.left .nav-description {
+    max-width: 200px; /* Ajusta el ancho según sea necesario */
+    white-space: normal; /* Permite que el texto se envuelva */
+}
+
+/* Alineaciones de los grupos */
+.left {
+    justify-content: flex-start;
+}
+
+.center {
+    justify-content: center;
+    flex-grow: 1; /* Permite centrar el grupo en el espacio disponible */
+    gap: 70px;
+    padding-right: 200px;
+}
+
+.right {
+    justify-content: flex-end;
+}
+
+
+
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+nav ul li a:hover, .services:hover {
+    color: #3942E1; /* Cambia el color a azul cuando el cursor se acerque */
+    transition: 0.4s ease
+}
+
+.nav-logo {
+    max-height: 30px;
+}
+
+main {
+    width: 100%;
+    height: 70vh;
+    padding: 0;
+    top:0;
+    padding-top: 40px;
+    background-color: #ffffff;
+}
+
+.gallery {
+    width: 100%; /* Ancho completo */
+    overflow-x: scroll; /* Habilita el scroll horizontal */
+    overflow-y: hidden;
+    white-space: nowrap; /* Evita que los elementos se envuelvan */
+    padding: 20px 0; /* Espaciado vertical */
+    box-sizing: border-box;
+}
+
+.gallery ul {
+    display: flex; /* Permite que los elementos se alineen horizontalmente */
+    padding-left: 25px; /*separacion degaleria con borde pantalla*/
+    margin: 0;
+}
+
+.gallery li {
+    position: relative;
+    display: inline-block; /* Alinea los elementos en línea */
+    margin-right: 10px; /* Espaciado entre las imágenes */
+    text-align: center;
+}
+
+.spacer {
+    width: 400px; /* Ancho del espaciador */
+    height: 400px; /* Altura del espaciador */
+    background-color: white; /* Fondo transparente */
+    margin: 0 100px;
+    padding: 0;
+    color: transparent;
+}
+
+.gallery li :first-child {
+    margin: left 0;
+}
+
+.gallery img, .gallery video {
+    width: auto; /* Ancho de las imágenes */
+    height: 400px; /* Mantiene la proporción de las imágenes */
+    transition: transform 0.4s ease;
+    position: relative; /* Set position relative for the image */
+    z-index: 2; /* Higher z-index for the image */
+    padding-bottom: 30%;/*espaciado de imagen con barra de scroll horizontal*/
+    border: none;
+    margin: 0;
+}
+
+.gallery video:first-child {
+    margin-left: 0;
+}
+
+.description {
+    position: absolute; /* Position absolute for the description */
+    top: 0; /* Align to the top of the li */
+    width: 100%;
+    left: 0;
+    transform: translateX(0); /* Center the description */
+    z-index: 1; /* Lower z-index for the description */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.description-line {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.description p {
+    margin: 0;
+    padding: 2px 0;
+}
+
+
+.left-text {
+    text-align: left;
+}
+
+.right-text {
+    text-align: right;
+}
+
+.pais p {
+    font-weight: 300;
+}
+
+.gallery img:hover, .gallery video:hover {
+    transform: translateY(95px); /* Move the image 10 pixels down on hover */
+    transition: 0.5s ease;
+}
+
+footer {
+    text-align: match-parent;
+    align-items: center;
+    background: #ffffff;
+    color: #black;
+    position: fixed;
+    width: 100%;
+    height: 8vh;
+    bottom: 0; /* Ensure the footer is at the bottom */
+    padding: 10px 0;
+}
+
+footer ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0 25px;
+    bottom: 0;
+}
+
+footer ul li {
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+footer ul li a:hover {
+    color: #3942E1; /* Cambia el color a azul cuando el cursor se acerque */
+    transition: 0.5s ease
+}
+
+.destacado { /* Letras que estan en mayor tamaño en el footer*/
+    font-size: 25pt;
+    width: 33%;
+    text-align: left;
+}
+
+.ariel-delfierro:hover {
+    color: #3942E1; /* Cambia el color a azul cuando el cursor se acerque */
+    transition: 0.5s ease
+}
+
+.nodestacado{
+    text-align: left;
+    padding: 0 20px;
+}
+
+
+/* Estilos para el dropdown de servicios */
+.services {
+    position: relative;
+}
+
+.services-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: transparent; /* Fondo transparente */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1;
+    padding: 0;
+}
+
+.services-dropdown p {
+    margin: 0;
+    padding: 1px 0; /* Reduce el padding para menor espacio entre los elementos */
+    text-align: right; /* Alinea el texto a la derecha */
+    white-space: nowrap;
+    color: #000; /* Color del texto */
+}
+
+.services:hover .services-dropdown {
+    opacity: 1;
+    visibility: visible;
+}
